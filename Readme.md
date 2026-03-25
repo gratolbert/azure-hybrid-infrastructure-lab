@@ -1,5 +1,8 @@
 # Azure Hybrid Infrastructure Lab
-
+![Azure](https://img.shields.io/badge/Azure-Hybrid%20Lab-blue)
+![Linux](https://img.shields.io/badge/Linux-Ubuntu-green)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+![Project Type](https://img.shields.io/badge/Type-Hybrid%20Infrastructure-orange)
 ## 📌 Overview
 
 This project demonstrates the deployment of a hybrid cloud infrastructure using Microsoft Azure. It simulates an on-premises environment connected to Azure resources, incorporating networking, monitoring, and hybrid management concepts.
