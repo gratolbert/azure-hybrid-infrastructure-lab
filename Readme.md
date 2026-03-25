@@ -2,15 +2,17 @@
 
 ## 📌 Overview
 
-This project demonstrates the design and implementation of a hybrid cloud environment using Microsoft Azure. It simulates an on-premises infrastructure connected to Azure resources using VPN and Azure Arc.
+This project demonstrates the deployment of a hybrid cloud infrastructure using Microsoft Azure. It simulates an on-premises environment connected to Azure resources, incorporating networking, monitoring, and hybrid management concepts.
+
+---
 
 ## 🎯 Objectives
 
-* Build a hybrid network architecture
-* Deploy Azure Virtual Machines
-* Configure secure connectivity (VPN)
-* Onboard servers into Azure using Azure Arc
+* Deploy and configure Azure infrastructure components
+* Simulate hybrid architecture using cloud-based resources
 * Enable monitoring and observability
+* Understand Azure Arc use cases and limitations
+* Demonstrate real-world troubleshooting and adaptability
 
 ---
 
@@ -23,68 +25,107 @@ This project demonstrates the design and implementation of a hybrid cloud enviro
 ## ⚙️ Technologies Used
 
 * Microsoft Azure
+* Azure Virtual Machines (Linux)
 * Azure Virtual Network (VNet)
-* VPN Gateway (Point-to-Site)
-* Azure Virtual Machines
-* Azure Arc
-* Log Analytics
+* Network Security Groups (NSG)
+* Log Analytics Workspace
+* Azure Monitor (VM Insights)
+* Azure Arc (conceptual implementation)
 
 ---
 
-## 🚀 Deployment Steps
+## 🚀 Deployment Summary
 
 ### 1. Resource Group
 
-* Created `rg-hybrid-lab` in Azure
+* Created `rg-hybrid-lab` to organize all resources
 
 ### 2. Networking
 
 * Configured VNet: `10.0.0.0/16`
-* Subnets:
-
-  * Default: `10.0.1.0/24`
-  * GatewaySubnet
+* Subnet: `10.0.1.0/24`
+* Enabled internal VM communication
 
 ### 3. Virtual Machines
 
-* Azure VM: `vm-azure-01`
-* On-Prem Simulation: `vm-onprem-01`
+* `vm-azure-01` (cloud workload)
+* `vm-onprem-01` (on-prem simulation)
+* Ubuntu 24.04 LTS
+* Deployed using available DC-series SKU due to regional constraints
 
-### 4. Connectivity
+### 4. Hybrid Architecture Simulation
 
-* Configured VPN Gateway
-* Enabled Point-to-Site VPN
+* Simulated on-prem environment within Azure
+* Validated internal communication via private IPs
 
-### 5. Azure Arc
+### 5. Azure Arc (Conceptual Implementation)
 
-* Onboarded on-prem VM into Azure
+* Attempted onboarding of Azure VM
+* Identified limitation: Azure Arc does not support Azure-native VMs
+* Documented real-world use case for external/on-prem systems
 
-### 6. Monitoring
+### 6. Monitoring & Observability
 
-* Enabled Log Analytics workspace
-* Connected VMs for monitoring
+* Created Log Analytics Workspace: `law-hybrid-lab`
+* Enabled VM Insights for both VMs
+* Verified telemetry and performance metrics
 
 ---
 
 ## 📸 Screenshots
 
-| Step | Description       |
-| ---- | ----------------- |
-| 1    | Resource Group    |
-| 2    | Virtual Network   |
-| 3    | Virtual Machines  |
-| 4    | VPN Configuration |
-| 5    | Azure Arc         |
-| 6    | Monitoring        |
+Stored in `/screenshots/`:
+
+* Resource Group creation
+* Virtual Network configuration
+* VM deployment
+* SSH connectivity
+* Monitoring enabled
+* Network validation
 
 ---
 
-## 📚 Key Learnings
+## ⚠️ Challenges & Solutions
 
-* Hybrid cloud architecture design
-* Secure connectivity using VPN
-* Managing on-prem resources with Azure Arc
-* Monitoring cloud + hybrid workloads
+### Challenge 1: VM Size Restrictions
+
+* Limited SKU availability across regions
+* B-series and A-series unavailable
+
+**Solution:**
+
+* Adapted to available DC-series VM sizes
+
+---
+
+### Challenge 2: Region Inconsistencies
+
+* Different regions exposed different VM capabilities
+
+**Solution:**
+
+* Standardized deployment within a single region
+
+---
+
+### Challenge 3: Azure Arc Limitation
+
+* Azure Arc agent cannot be installed on Azure VMs
+
+**Solution:**
+
+* Documented limitation
+* Positioned Arc as hybrid/multi-cloud solution
+
+---
+
+## 🧠 Key Learnings
+
+* Azure resource availability varies by region and subscription state
+* Real-world cloud deployments require adaptability
+* Azure Arc is designed for non-Azure environments
+* Monitoring is critical for visibility and operations
+* Troubleshooting is a core cloud engineering skill
 
 ---
 
@@ -92,23 +133,12 @@ This project demonstrates the design and implementation of a hybrid cloud enviro
 
 This project demonstrates:
 
-* Cloud engineering skills
-* Hybrid infrastructure knowledge
-* Real-world enterprise architecture patterns
+* Cloud infrastructure deployment
+* Hybrid architecture design
+* Azure networking fundamentals
+* Monitoring and observability
+* Real-world troubleshooting experience
 
 ---
 
-## 📎 Future Enhancements
-
-* Terraform deployment
-* Site-to-Site VPN
-* Azure Firewall integration
-* CI/CD pipeline integration
-
----
-
-## 👤 Author
-
-Grant Tolbert
-
----
+## 🚀
