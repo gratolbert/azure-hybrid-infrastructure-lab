@@ -1,3 +1,4 @@
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Project%20Post-blue)](YOUR_POST_URL)
 # Azure Hybrid Infrastructure Lab
 
 ![Azure](https://img.shields.io/badge/Azure-Hybrid%20Lab-blue)
