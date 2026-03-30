@@ -9,6 +9,19 @@ This project demonstrates the deployment of a hybrid cloud infrastructure using 
 
 ---
 
+## Table of Contents
+
+- Overview
+- Objectives
+- Architecture
+- Technologies Used
+- Deployment Summary
+- Challenges & Solutions
+- Key Learnings
+- Resume Value
+- Future Improvements
+---
+
 ## 🎯 Objectives
 
 * Deploy and configure Azure infrastructure components
@@ -18,11 +31,17 @@ This project demonstrates the deployment of a hybrid cloud infrastructure using 
 * Demonstrate real-world troubleshooting and adaptability
 
 ---
+## Architecture Overview
 
-## 🏗️ Architecture
+![Hybrid Architecture](architecture/architecture-diagram.png)
 
-![Architecture Diagram](architecture/diagram.png)
+## Azure Resource Deployment
 
+![Azure Resource Layout](architecture/resource-layout.png)
+
+## Network Traffic Flow
+
+![Network Traffic Flow](architecture/network-traffic-flow.png)
 ---
 
 ## ⚙️ Technologies Used
@@ -45,8 +64,8 @@ This project demonstrates the deployment of a hybrid cloud infrastructure using 
 
 ### 2. Networking
 
-* Configured VNet: `10.0.0.0/16`
-* Subnet: `10.0.1.0/24`
+* Configured VNet: 10.0.0.0/16
+* Subnet: 10.0.1.0/24
 * Enabled internal VM communication
 
 ### 3. Virtual Machines
@@ -144,4 +163,12 @@ This project demonstrates:
 
 ---
 
-## 🚀
+## 🚀 Future Improvements
+
+Possible enhancements for this project include:
+
+* Deploying a real on-premises VM using VMware or VirtualBox
+* Connecting environments using a Site-to-Site VPN
+* Automating deployment with Terraform
+* Adding Azure Bastion for secure VM access
+* Implementing Azure Policy for governance
